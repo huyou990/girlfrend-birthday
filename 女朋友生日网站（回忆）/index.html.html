@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二界面3</title>
+</head>
+<style>
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            overflow-x: hidden;
+            color: #090909;
+        }
+        
+        .page {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 15vh;
+        }
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            z-index: -1;
+        }
+        
+        .content {
+            max-width: 800px;
+            width: 85%;
+            padding: 30px 40px;
+            text-align: center;
+            z-index: 1;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideIn 0.8s forwards;
+            background: rgba(255,255,255,0.3);
+            padding:10px 20px;
+            border: radius 10px;
+            display:inline-block;
+            color: #074b4b;
+        }
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideIn 0.8s 0.5s forwards;
+            font-weight: bold;
+        }
+        
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        #video-link {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            cursor: pointer;
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        #video-link:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.05);
+        }
+        
+        #video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: popup 0.5s forwards;
+        }
+        @keyframes popup {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+        
+        #video-player {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        #close-video {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        audio {
+            display: none;
+        }
+</style>
+<body>
+    <!-- 页面1 -->
+    <div class="page" id="page1">
+        <div class="bg-image" style="background-image: url(images/照片1.jpg);"></div>
+        <div class="content">
+            <h1>2025.10.12</h1>
+            <p>点击屏幕任意地方开始阅读</p>
+            <p>《我们早就相遇》</p>
+            <p>原来我们早就遇见过，</p>
+            <p>我们见过面的，</p>
+            <p>我们曾经是广袤宇宙中，</p>
+            <p>同一块陨石。</p>
+            <p>我们曾数过遥远的星辰，唱着儿时的歌谣</p>
+            <p>我们从未想过，</p>
+            <p>在亿万年后的今天：</p>
+            <p>未解的渊源，如同古迹重现。</p>
+            <p>再次相遇</p>
+            <p>在地球上一颗普通的石头上，</p>
+            <p>原来，我们见过面的。</p>
+        </div>
+    </div>
+    
+    <!-- 页面2 -->
+    <div class="page" id="page2">
+        <div class="bg-image" style="background-image: url(images/照片2.jpg);"></div>
+        <div class="content">
+            <h1>2025.10.25</h1>
+            <p>这是我们第一次正式认识，我对你的第一印象就是感觉很安静的一个人，但同时也很好相处，
+                还好当时因为要帮忙集赞，加上了微信才有了后面的故事。
+            真正让我开始注意到你是在回学校的途中，我们谈到了《云边有个小卖部》，谈到了刘十三的故事，还有喜欢刀人的余华老师的《活着》
+            好久没遇到能有机会一起谈论喜欢的书的人，也没想到这件事为十三天后的夜晚铺垫。我还记得当时在地铁分别的那一站的电梯上，当你惊讶于我会唱一点《刘十三》，我当时心里可美滋滋了。</p>
+        </div>
+    </div>
+    
+    <!-- 页面3 -->
+    <div class="page" id="page3">
+        <div class="bg-image" style="background-image: url(images/照片3.jpg);"></div>
+        <div class="content">
+            <h1>2025.10.31</h1>
+            <p>这晚你发给我说柿子还剩一个，我当时就想着开个玩笑，随口说我想要，让我极其意外的是你竟然毫不犹豫地答应了
+                （当时我就震惊地从座位弹跳起来，导致大腿肌肉还隐约抽筋），但是当时已经很晚了，你还愿意从松1六楼专门跑到
+                杏2（当时不知道你是住在六楼），依现在的视角看，你个“小懒货”当时二话没说就跑一趟，现在求着你都不愿意下来一趟
+                所以再想起来更加震惊。与此同时还借了一本书给我，你说要让我当“小白鼠”，先让我看看书的品质怎么样，可是借书了
+                就有还书的必要，那么交往就会增多，当时这么想，可高兴了。不知道你当时有没有想到这一层，嘻嘻，于是在我借你书的那天晚上
+                我就顺便送给你一个海螺（那可是我不久前亲自在日照辛苦捡到的唯一的品相最好的海螺，呜呜呜，我都不舍得送给别人，别人我都给小贝壳
+                可是我送给你的时候没有一丝的犹豫）
+
+            </p>
+        </div>
+    </div>
+    <!-- 页面4 -->
+    <div class="page" id="page4">
+        <div class="bg-image" style="background-image: url(images/照片4.jpg);"></div>
+        <div class="content">
+            <h1>2025.11.7</h1>
+            <p>这天晚上，我记得清楚是星期六，因为第二天出去参加活动，不可能是周中，这晚是第一次邀请你一起欣赏人文学院的
+                表演，这晚下了小雨，缠缠绵绵，说大不大，却让我们不得在你《脚抽筋的时候》在雨中站着聊天，我还记得当时我蹲下
+                双手合十，祈祷你的脚丫不要再抽筋了，现在想起来那个画面好搞笑呀。那一晚我对你的好感度在慢慢增加，除了愿意和我一起
+                看地面上绚烂的“烟花”，还会有哪个“神经”陪我在雨夜中漫步。我当时就觉得你不一样，于是更加想要认识你，哎呀，忘记说
+                表演的现场了，虽然我听不懂吧，估计你也是哈哈哈哈，和你坐在一起的时候非常激动，要不是大厅一直有咏叹调的音乐，估计都听到我的
+                心跳了。那一晚我也告诉你关于我认识那个女生的事情。
+            </p>
+        </div>
+    </div>
+    
+    <!-- 页面5 -->
+    <div class="page" id="page5">
+        <div class="bg-image" style="background-image: url(images/照片5.jpg);"></div>
+        <div class="content">
+            <h1>2025.11.8</h1>
+            <p>论回忆的话，今天绝对是绝杀</p>
+            <P>这天我们可以说一天都待在一起，上午一起去劝募，路上坐公交车时，我拍了拍旁边的位置，示意你坐，你也很乐意地坐上去，我了个豆，你都不知道我当时简直都要喜出望外了
+                想要破开公交车的窗户去大喊一声，但是人太多，我必须要矜持，保持优雅。然后再傍晚时分，我们一起去看我们学院的中秋活动，
+                最令我记忆深刻的是，腼腆的你，竟然敢帮我给我的部员加油，当时是越来越喜欢你，你大声喊出加油的那一刻，也是我心动的那一刹那
+                。可惜的是你说手机没电了，于是我们先行离开，结果并没有回宿舍，我邀请你去我喜欢的地方，在这里，我们坐在一起，一起肩靠着肩
+                ，温柔的晚风顺着你的眉梢吹过，我们一起唱着《刘十三》这首歌，我可以说，那几分钟我确切感受到了幸福与心安，就好像我们进入了另一个世界
+                ，这里只有我们，还有我们共振的心跳，于是这晚过后，我就决定了。
+            </P>
+        </div>
+    </div>
+    
+    <!-- 页面6 -->
+    <div class="page" id="page6">
+        <div class="bg-image" style="background-image: url(images/照片6.jpg);"></div>
+        <div class="content">
+            <h1>2025.11.10</h1>
+            <p>这是我第一次对你发脾气，我记得好像是昨天晚上我帮你跑校园跑，我当时的确想要给你表现一波的，结果好像是你
+                并没有像我预期的那样夸我一句，所以心里比较失望，很在意，于是在分别的时候没有理你。然后这天前晚上你就给我
+                写了这一篇自述，第二天早上看见后，首先还是很惊讶的，但是随即就想到你昨晚因为我睡得很晚，于是第二天上午就要了
+                你一份课表，下午第一节课想要和你待在一起，以安慰（虽然我当时没有明确安慰，你当时可能没有意识到），但是我记得
+                你在上课可老实了，还害怕被点名，虽然我第一感觉是不理解，但是很快觉得好可爱，那天你好像还给我点了一杯奶茶
+            
+        
+            </p>
+        </div>
+    </div>
+    <!-- 页面7 -->
+    <div class="page" id="page7">
+        <div class="bg-image" style="background-image: url(images/照片7.jpg);"></div>
+        <div class="content">
+            <h1>2025.11.11</h1>
+            <p>今天是你第一次给我点外卖，是肉夹馍加凉皮，你当时感叹：“什么神人发明的肉夹馍配凉皮的”，我只是提了一嘴想尝尝
+                于是第二天就给我点了，我也坐在桌子前美滋滋地吃着，很开心。还有就是今天是“光棍节”，哈哈哈哈，这天有你给我买吃的
+                这样一对比，心里很满足。
+            </p>
+        </div>
+    </div>
+    
+    <!-- 页面8 -->
+    <div class="page" id="page8">
+        <div class="bg-image" style="background-image: url(images/照片8.jpg);"></div>
+        <div class="content">
+            <h1>2025.11.23</h1>
+            <p>我们约定这天早上去云龙山看日出，那天早上，你戴着我送你的围巾，我骑着小蓝带着你，吹着早晨不冷不热的风，那是第一次让你抱着我
+                在爬山的路途上，气喘吁吁的，身上微微沁出了汗，一边爬，一边找能看到太阳的观测位置，虽然最后只在路上看到了
+                一点日出，我记得在路上鼓励你从一个稍微高点的坎子跳下来，你说你不敢，最后你还是跳了，不过脚确实差点扭伤，到云龙山最高处时太阳已经被云遮住了，但是不觉得遗憾，下山后，我开玩笑说要饿到晕倒，然后我们在便利店买了东西
+                我买了烤肠，你买了两袋柠檬味鸡爪，吃的津津有味。然后下午一起去看了《狂野时代》，我当时看完一脸茫然，但还是和你勉强讨论了
+                一会，然后吃了一顿板面，找半天的醋，但是你说南方的醋更酸，我不经常吃醋，我也分辨不出。然后吃完饭就分开了，你去家教
+                我回学校，但是我好像舍不得分开，于是我坚持要送你去家教的地方，记得在家教隔壁的楼层还有结婚的家庭喜事。
+
+            </p>
+        </div>
+    </div>
+    
+    <!-- 页面9 -->
+    <div class="page" id="page9">
+        <div class="bg-image" style="background-image: url(images/照片9.jpg);"></div>
+        <div class="content">
+            <h1>2025.11.29</h1>
+            <p>29号和30号这两天，我们一起在南京旅游。</p>
+            <p>我记得在去南京之前的一天晚上，还使劲说服你一起去。虽说我去过很多次南京，但是是第一次我自己
+                带一个人去，不知道你对此次南京之行哪块记忆最深刻，我觉得最让我深刻的还是我们准备去观光博物院的路上
+                我们一起买了淀粉肠，我们一直讨论淀粉肠好吃还是肉肠好吃，然后你在路边一边吃一边走着，我在后面
+                偷偷给你拍照，你不仅害羞，还非不要我拍，但最后还是我得逞了。在玄武湖，我想给你买杯咖啡，但是找不到合适的
+                咖啡店，于是作罢，遗憾的是没有带你去开船，但是忘记为啥不去湖中心开船了（好像是风太大），后在玄武湖的长椅上
+                休息，我抢你的吃的，晒到不行了之后才走，身上热乎乎的。这次去南京也没有去城墙，没有坐观光车。在门口的时候我想
+                买只小熊猫给你，但是你当时极其拒绝，这次我送你的礼物终于得逞了，送你一个小熊猫帽子，嘿嘿。不过逛的还挺累，路走得
+                老多了，还记得我姐带我们抓娃娃吗，最后我们抓到一个，只可惜还没过夜就搞丢了，当时还特别生气，路上也不理你
+                最后在楼下的时候，你跟我说你第一次为其他的男生哭，纸短情长...说不完啦！
+                
+
+            </p>
+        </div>
+    </div>
+    <!-- 页面10 -->
+    <div class="page" id="page10">
+        <div class="bg-image" style="background-image: url(images/照片10.jpg);"></div>
+        <div class="content">
+            <h1>2025.12.7</h1>
+            <p>那一晚，你送了我一本书，这本书里的明信片的网址信件，让我很难忘，那是你对我的鼓励，虽然只有短短几句
+                。不知道你准备了多久，但是我还是倍感荣幸能让你为我准备这些，相信你也一定为我付出了许多时间，嘻嘻，不过打开时
+                已经太晚了，要赶紧睡了，不能在熬下去看了。这本书的排版也很好看！
+            </p>
+        </div>
+    </div>
+    
+    <!-- 页面11 -->
+    <div class="page" id="page11">
+        <div class="bg-image" style="background-image: url(images/照片11.jpg);"></div>
+        <div class="content">
+            <h1>2025.12.9</h1>
+            <p>这是你第一次主动喊我宝宝，当时开心极了，一天都很有力量嘻嘻，我还专门记录下来了哈哈哈哈，因为这对我来说很难得</p>
+        </div>
+    </div>
+    
+    <!-- 页面12 -->
+    <div class="page" id="page12">
+        <div class="bg-image" style="background-image: url(images/照片12.jpg);"></div>
+        <div class="content">
+            <h1>2025.12.10</h1>
+            <p>今天晚上送了我ad钙，是我想让你帮我带的，最后还让我给你一个奖励----亲你的脸颊</p>
+            <p>找我撒娇要奖励的时候可可爱了，喜欢死了嘿嘿</p>
+        </div>
+    </div>
+    <!-- 页面13 -->
+    <div class="page" id="page13">
+        <div class="bg-image" style="background-image: url(images/照片13.jpg);"></div>
+        <div class="content">
+            <h1>2025.12.25</h1>
+            <p>这天晚上一起烤棉花糖，在操场的广场台前，用舍友借的打火机，点燃了果碳，那逐渐旺盛的温度，也见证了我们之间的点点滴滴
+                看见你嘴边的巧克力，现在想起来还帮你擦掉了，吃完后，这两个听话的学生为了不引起令学校难堪的“大事”，于是千方百计
+                找到合适的地方把果碳灰烬埋了，但这还不够，需要再多待一会，看见没有异常才肯离开，离开时也是三步一回头
+                走的时候，还在操场上拉着你滑草，但是奈何你的鞋子摩擦太大（下次给你买双鞋，感觉你老是穿那双老爹鞋），只能断断续续地滑，远看就像犁地的。
+            </p>
+        </div>
+    </div>
+    
+    <!-- 页面14 -->
+    <div class="page" id="page14">
+        <div class="bg-image" style="background-image: url(images/照片14.jpg);"></div>
+        <div class="content">
+            <h1>2025.12.31</h1>
+            <p>2025年即将结束，但我们的故事刚刚开始</p>
+            <p>关于你，别人不在意的，我在意，你自己不在意的，我依然在意。我虽不是什么安徽第一深情，不会去做什么惊天地，泣鬼神的
+                大事，但在和你在一起的日子，我会包容我该包容的，做我该做的，去让你变得更好，也让我们变得更好，变得勇敢自信
+                心思细腻但不为情绪主导。不去想多远的事情，现在能做的，就去做，并且下狠心，不到长城非好汉地去做，这也是我想成为的自己
+            </p>
+        </div>
+        <a id="video-link">see here in the end</a>
+    </div>
+    
+    <!-- 视频容器 -->
+    <div id="video-container">
+        <span id="close-video">×</span>
+        <video id="video-player" controls autoplay>
+            <source src="video/女友生日网站视频.mp4" type="video/mp4">
+            您的浏览器不支持视频播放。
+        </video>
+    </div>
+    <!-- 背景音乐 -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="bgm/女朋友生日网站bgm.mp3" type="audio/mpeg">
+        您的浏览器不支持音频元素。
+    </audio>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const videoLink = document.getElementById('video-link');
+            const videoContainer = document.getElementById('video-container');
+            const closeVideo = document.getElementById('close-video');
+            const videoPlayer = document.getElementById('video-player');
+            const pages = document.querySelectorAll('.page');
+            const bgMusic = document.getElementById('bgMusic');
+            
+            // 尝试播放背景音乐
+            function playMusic() {
+                bgMusic.play().catch(e => {
+                    console.log("自动播放被阻止，请手动点击页面播放音乐");
+                    document.body.addEventListener('click', function initAudio() {
+                        bgMusic.play();
+                        document.body.removeEventListener('click', initAudio);
+                    });
+                });
+            }
+            playMusic();
+            
+            // 视频链接点击事件
+            videoLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 暂停背景音乐
+                bgMusic.pause();
+                
+                // 隐藏所有页面
+                pages.forEach(page => page.style.display = 'none');
+                
+                // 显示视频容器
+                videoContainer.style.display = 'flex';
+                
+                // 播放视频
+                videoPlayer.play();
+            });
+            
+            // 关闭视频
+            closeVideo.addEventListener('click', function() {
+                videoContainer.style.display = 'none';
+                videoPlayer.pause();
+                
+                // 显示所有页面
+                pages.forEach(page => page.style.display = 'flex');
+                
+                // 恢复背景音乐
+                playMusic();
+            });
+        });
+    </script>
+    
+</body>
+</html>
